@@ -8,6 +8,8 @@ body {
 }
 
 header {
+    background-color: white;
+    position: sticky;
     color: black;
     height: 100px;
     padding: 0 30px;
@@ -32,10 +34,10 @@ header {
 
 header ul {
     display: flex;
-    margin: 0 0 0 auto;
+    margin: 0 50px 0 auto;
     list-style: none;
     flex-direction: row;
-    gap: 15px;
+    gap: 35px;
 }
 
 header ul button {
@@ -48,7 +50,82 @@ header ul button {
 
 header ul button:hover {
     text-decoration: underline;
+    text-decoration: solid;
+    font-weight: bold;
 }
+
+.flipswitch {
+    position: relative;
+    width: 82px;
+}
+
+.flipswitch input[type=checkbox] {
+    display: none;
+}
+
+.flipswitch-label {
+    display: block;
+    overflow: hidden;
+    cursor: pointer;
+    border: 5px solid black;
+    border-radius: 50px;
+}
+
+.flipswitch-inner {
+    width: 200%;
+    margin-left: -100%;
+    transition: margin 0.3s ease-in 0s;
+}
+
+.flipswitch-inner:before,
+.flipswitch-inner:after {
+    float: left;
+    width: 50%;
+    height: 28px;
+    padding: 0;
+    line-height: 28px;
+    font-size: 18px;
+    color: white;
+    font-family: Trebuchet, Arial, sans-serif;
+    font-weight: bold;
+    box-sizing: border-box;
+}
+
+.flipswitch-inner:before {
+    content: "";
+    padding-left: 5px;
+    background-color: black;
+}
+
+.flipswitch-inner:after {
+    content: "";
+    padding-right: 5px;
+    background-color: #FFFFFF;
+    text-align: right;
+}
+
+.flipswitch-switch {
+    content: url(./dark-light.png);
+    width: 45px;
+    margin: -8.5px;
+    background: #FFFFFF;
+    border: 5px solid black;
+    border-radius: 100px;
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    right: 51px;
+    transition: all 0.3s ease-in 0s;
+}
+
+.flipswitch-cb:checked+.flipswitch-label .flipswitch-inner {
+    margin-left: 0;
+}
+
+.flipswitch-cb:checked+.flipswitch-label .flipswitch-switch {
+    right: 0;
+}
+
 
 .container {
     display: flex;
@@ -56,7 +133,7 @@ header ul button:hover {
 
 main {
     display: flex;
-    width: 800px;
+    width: 820px;
     height: fit-content;
     margin-bottom: 100px;
 }
@@ -65,8 +142,8 @@ main ul {
     display: flex;
     flex-wrap: wrap;
     list-style: none;
-    justify-content: space-between;
     row-gap: 15px;
+    column-gap: 25px;
 }
 
 main ul li {
@@ -77,14 +154,17 @@ main ul li {
     width: 250px;
     padding: 5px;
     border: 2px solid transparent;
+    border-radius: 10px;
 }
 
 main ul li:hover {
     border: solid 2px #828282;
+    transform: translateY(-5px);
+    transition: all 0.3s ease-in 0s
 }
 
 main ul li img {
-    width: 80%;
+    height: 140px;
     margin: 5px auto;
 }
 
@@ -107,7 +187,7 @@ main ul li p {
 }
 
 main ul li h5 {
-    margin: 10px 0;
+    margin: auto 0 10px 0;
     font-size: 16px;
     font-weight: bold;
 }
@@ -120,6 +200,7 @@ main ul li button {
 
 main ul li button:hover {
     text-decoration: underline;
+    font-weight: bold;
 }
 
 .lateral {
@@ -130,32 +211,31 @@ main ul li button:hover {
 }
 
 
-.lateral form {
+.search {
     display: flex;
     height: 30px;
     align-content: center;
 }
 
-.lateral form input {
+.search input {
     background-color: white;
     border: solid #37268C 2px;
     border-radius: 10px 0 0 10px;
     width: 100%;
 }
 
-lateral form input:focus-visible {
-    outline: solid #37268C 2px;
-    background-color: transparent;
+.search input:focus-visible {
+    outline: solid #37268C 0.1px;
 }
 
-.lateral form button {
+.search button {
     border: none;
     background-color: #37268C;
     width: 70px;
     border-radius: 0 10px 10px 0;
 }
 
-.lateral form button img {
+.search button img {
     height: 100%;
 }
 
@@ -181,12 +261,21 @@ lateral form input:focus-visible {
     flex-direction: column;
     row-gap: 20px;
     overflow-y: auto;
+    margin-bottom: 5px;
 }
 
 #carrinho ul li {
     display: flex;
     flex-direction: row;
     height: 80px;
+    pointer-events: none;
+    border-radius: 10px;
+    padding: 5px 0;
+}
+
+#carrinho ul li:hover {
+    background-image: linear-gradient(to right, rgb(135, 62, 62),rgba(80, 33, 33, 0.541));
+    transition: all 0.2s linear 0.2s;
 }
 
 #carrinho ul li div {
@@ -196,6 +285,7 @@ lateral form input:focus-visible {
 
 #carrinho ul li img {
     height: 90%;
+    margin: auto 0;
 }
 
 #carrinho ul li h3 {
@@ -215,10 +305,13 @@ lateral form input:focus-visible {
     margin: auto auto 5px 0;
     padding: 0;
     font-weight: 300;
+    pointer-events: all;
 }
 
 #carrinho button:hover {
     text-decoration: underline;
+    font-weight: bold;
+    pointer-events: all;
 }
 
 
@@ -271,7 +364,7 @@ lateral form input:focus-visible {
     font-size: 14px;
 }
 
-*{
+* {
     scrollbar-width: auto;
     scrollbar-color: #20c997 #e9ecef;
 }

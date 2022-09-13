@@ -1,0 +1,58 @@
+body {
+    background-color: black;
+    color: white;
+}
+
+header {
+    background-color: black;
+}
+
+button {
+    color: white;
+}
+
+h1 {
+    color: white;
+}
+
+main ul li {
+    background-color: #333333;
+}
+
+main ul li:hover {
+    border: solid 2px white;
+}
+
+main ul li h4 {
+    background-color: #8776da;
+}
+
+#carrinhoVazio h3 {
+    color: white;
+}
+
+#carrinho ul li {
+    background-color: #333333;
+}
+
+.quantidade {
+    background-color: #828282;
+}
+.soma {
+    background-color: #828282;
+}
+
+
+*::-webkit-scrollbar {
+    width: 10px;
+}
+
+*::-webkit-scrollbar-track {
+    background: black;
+}
+
+*::-webkit-scrollbar-thumb {
+    background-color: #828282;
+    border-radius: 5px;
+    border: 1px double black;
+}

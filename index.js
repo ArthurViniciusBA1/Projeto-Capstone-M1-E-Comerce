@@ -20,22 +20,9 @@ for (let i = 0; i < botoesHeader.length; i++) {
     botaoH.addEventListener("click", function (event) {
         listaDeProdutos.innerHTML = ""
         let palavra = event.target.innerText
-        console.log(palavra)
         filtro(palavra)
     })
 }
-
-function filtro(palavra) {
-    for (let i = 0; i < data.length; i++) {
-        if (palavra === "Todos") {
-            listaDeProdutos.append(gerarTeamplate(data[i]))
-        } else if (palavra === data[i].tag[0]) {
-            listaDeProdutos.append(gerarTeamplate(data[i]))
-        }
-    }
-}
-
-
 
 function gerarTeamplate(produto) {
     let li = document.createElement("li")
@@ -146,4 +133,65 @@ function testCarrinho() {
         console.log(document.querySelector("#carrinho").style.display)
     }
 }
+
+
+
+function barraDePesquisa() {
+    listaDeProdutos.innerHTML = ""
+    let pesquisa = document.getElementById("pesquisa").value
+
+    if (pesquisa === "") {
+        for (let i = 0; i < data.length; i++) {
+            listaDeProdutos.append(gerarTeamplate(data[i]))
+        }
+        return
+    }
+
+
+
+    for (let i = 0; i < data.length; i++) {
+        let nomes = data[i].nameItem.split(" ")
+        for (let j = 0; j < nomes.length; j++) {
+            if (pesquisa === nomes[j]) {
+                listaDeProdutos.append(gerarTeamplate(data[i]))
+            } else if (pesquisa === data[i].nameItem){
+                listaDeProdutos.innerHTML = ""
+                listaDeProdutos.append(gerarTeamplate(data[i]))
+            }
+        }
+    }
+
+}
+
+function filtro(palavra) {
+    for (let i = 0; i < data.length; i++) {
+        if (palavra === "Todos") {
+            listaDeProdutos.append(gerarTeamplate(data[i]))
+        } else if (palavra === data[i].tag[0]) {
+            listaDeProdutos.append(gerarTeamplate(data[i]))
+        }
+    }
+}
+
+
+
+
+let switchDark = document.getElementById("fs")
+let estiloDark = document.getElementById("darkMode")
+let logo = document.getElementById("logo")
+let icon = document.getElementById("favicon")
+
+switchDark.addEventListener("click", function (event) {
+    let checkStatus = event.target.checked
+    if (checkStatus === false) {
+        estiloDark.href = "./css/dark.css"
+        logo.src = "./img/icons/darkicon.png"
+        favicon.href = "./img/icons/darkicon.png"
+    } else {
+        estiloDark.href = "./css/style.css"
+        logo.src = "./img/icons/icon.png"
+        favicon.href = "./img/icons/icon.png"
+    }
+    console.log(checkStatus)
+})
 

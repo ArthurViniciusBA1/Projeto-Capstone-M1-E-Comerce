@@ -63,7 +63,7 @@ const data = [
   },
   {
     id: 7,
-    img: "./img/bota.webp",
+    img: "./img/bota.png",
     nameItem: "Bota Oxford",
     description:
       "Uma bota estilosa e confortável para ir em qualquer lugar...",
