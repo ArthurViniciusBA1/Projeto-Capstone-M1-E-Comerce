@@ -1,0 +1,291 @@
+* {
+    font-family: 'Inter', sans-serif;
+}
+
+body {
+    margin: 0 auto;
+    width: 1200px;
+}
+
+header {
+    color: black;
+    height: 100px;
+    padding: 0 30px;
+    display: flex;
+    align-items: center;
+    margin-bottom: 20px;
+    font-family: 'Inter', sans-serif;
+    color: #333333;
+}
+
+.logo {
+    display: flex;
+    font-size: 28px;
+    font-weight: bold;
+    align-items: center;
+}
+
+.logo img {
+    height: 80px;
+    margin-right: 10px;
+}
+
+header ul {
+    display: flex;
+    margin: 0 0 0 auto;
+    list-style: none;
+    flex-direction: row;
+    gap: 15px;
+}
+
+header ul button {
+    background-color: transparent;
+    border: none;
+    margin: auto auto 5px 0;
+    padding: 0;
+    font-weight: 300;
+}
+
+header ul button:hover {
+    text-decoration: underline;
+}
+
+.container {
+    display: flex;
+}
+
+main {
+    display: flex;
+    width: 800px;
+    height: fit-content;
+    margin-bottom: 100px;
+}
+
+main ul {
+    display: flex;
+    flex-wrap: wrap;
+    list-style: none;
+    justify-content: space-between;
+    row-gap: 15px;
+}
+
+main ul li {
+    display: flex;
+    flex-direction: column;
+    box-sizing: border-box;
+    height: 360px;
+    width: 250px;
+    padding: 5px;
+    border: 2px solid transparent;
+}
+
+main ul li:hover {
+    border: solid 2px #828282;
+}
+
+main ul li img {
+    width: 80%;
+    margin: 5px auto;
+}
+
+main ul li h4 {
+    background-color: #2E245E;
+    color: white;
+    padding: 4px;
+    width: fit-content;
+    font-size: 10px;
+}
+
+main ul li h3 {
+    font-size: 20px;
+    font-weight: bold;
+    margin: 10px 0;
+}
+
+main ul li p {
+    font-size: 14px;
+}
+
+main ul li h5 {
+    margin: 10px 0;
+    font-size: 16px;
+    font-weight: bold;
+}
+
+main ul li button {
+    background-color: transparent;
+    border: none;
+    margin: auto auto 10px 0px;
+}
+
+main ul li button:hover {
+    text-decoration: underline;
+}
+
+.lateral {
+    margin: 0 0 0 auto;
+    font-family: 'Inter', sans-serif;
+    width: 350px;
+    height: 600px;
+}
+
+
+.lateral form {
+    display: flex;
+    height: 30px;
+    align-content: center;
+}
+
+.lateral form input {
+    background-color: white;
+    border: solid #37268C 2px;
+    border-radius: 10px 0 0 10px;
+    width: 100%;
+}
+
+lateral form input:focus-visible {
+    outline: solid #37268C 2px;
+    background-color: transparent;
+}
+
+.lateral form button {
+    border: none;
+    background-color: #37268C;
+    width: 70px;
+    border-radius: 0 10px 10px 0;
+}
+
+.lateral form button img {
+    height: 100%;
+}
+
+#carrinho {
+    height: 400px;
+    width: 100%;
+}
+
+.lateral h2 {
+    margin: 20px 0 10px 0;
+    height: 30px;
+    padding: 13px;
+    text-align: center;
+    color: white;
+    background-color: #37268C;
+    font-size: 24px;
+    font-weight: bold;
+}
+
+#carrinho ul {
+    height: 300px;
+    display: flex;
+    flex-direction: column;
+    row-gap: 20px;
+    overflow-y: auto;
+}
+
+#carrinho ul li {
+    display: flex;
+    flex-direction: row;
+    height: 80px;
+}
+
+#carrinho ul li div {
+    display: flex;
+    flex-direction: column;
+}
+
+#carrinho ul li img {
+    height: 90%;
+}
+
+#carrinho ul li h3 {
+    font-size: 16px;
+    font-weight: bold;
+}
+
+#carrinho ul li h4 {
+    margin: 10px 0;
+    font-size: 12px;
+    font-weight: 500;
+}
+
+#carrinho button {
+    background-color: transparent;
+    border: none;
+    margin: auto auto 5px 0;
+    padding: 0;
+    font-weight: 300;
+}
+
+#carrinho button:hover {
+    text-decoration: underline;
+}
+
+
+.quantidade {
+    display: flex;
+    height: 40px;
+    max-width: 350px;
+    background-color: black;
+    align-items: center;
+    color: white;
+    padding: 0 20px 0 15px;
+}
+
+.quantidade #quantidade {
+    margin: 0 0 0 auto;
+}
+
+.soma {
+    display: flex;
+    height: 40px;
+    max-width: 350px;
+    background-color: black;
+    align-items: center;
+    color: white;
+    padding: 0 15px 0 15px;
+}
+
+#soma {
+    margin: 0 0 0 auto;
+}
+
+#carrinhoVazio {
+    display: flex;
+    width: 350px;
+    height: 250px;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+}
+
+#carrinhoVazio h3 {
+    color: #333333;
+    font-size: 20px;
+    font-weight: bold;
+}
+
+#carrinhoVazio p {
+    margin: 10px 0 0 0;
+    color: #828282;
+    font-size: 14px;
+}
+
+*{
+    scrollbar-width: auto;
+    scrollbar-color: #20c997 #e9ecef;
+}
+
+*::-webkit-scrollbar {
+    width: 10px;
+}
+
+*::-webkit-scrollbar-track {
+    background: white;
+}
+
+*::-webkit-scrollbar-thumb {
+    background-color: black;
+    border-radius: 5px;
+    border: 1px double #ffffff;
+}

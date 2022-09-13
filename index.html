@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible"
+        content="IE=edge">
+    <meta name="viewport"
+        content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet"
+        href="./css/reset.css">
+    <link id="estilo" rel="stylesheet"
+        href="./css/style.css">
+    <script defer
+        src="./js/database.js"></script>
+    <script defer
+        src="./js/index.js"></script>
+    <link rel="shortcut icon"
+        href="./img/icons/favicon.png"
+        type="image/x-icon">
+    <link rel="preconnect"
+        href="https://fonts.googleapis.com">
+    <link rel="preconnect"
+        href="https://fonts.gstatic.com"
+        crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@100;200;300;400;500;600;700;800;900&display=swap"
+        rel="stylesheet">
+    <title>Loja do Arthur</title>
+</head>
+
+<body>
+    <header>
+        <div class="logo">
+            <img src="./img/icons/icon.png">
+            <h1>Loja do Arthur</h1>
+        </div>
+        <ul>
+            <li><button class="botaoHeader">Todos</button></li>
+            <li><button class="botaoHeader">Acessórios</button></li>
+            <li><button class="botaoHeader">Calçados</button></li>
+            <li><button class="botaoHeader">Camisetas</button></li>
+        </ul>
+    </header>
+    <div class="container">
+        <main>
+            <ul id="listaDeProdutos">
+            </ul>
+        </main>
+        <aside class="lateral">
+            <form>
+                <input type="text"
+                    name="pesquisa"
+                    id="pesquisa"
+                    placeholder="Digite aqui sua pesquisa">
+                <button><img src="./img/icons/lupa.jpg"></button>
+            </form>
+            <h2>Carrinho de compras</h2>
+            <div id="carrinho">
+                <ul>
+                </ul>
+                <div>
+                    <div class="quantidade">
+                        <p>Quantidade: </p>
+                        <p id="quantidade"></p>
+                    </div>
+                    <div class="soma">
+                        <p>Total: </p>
+                        <p id="soma"></p>
+                    </div>
+                </div>
+            </div>
+            <div id="carrinhoVazio">
+                <h3>O carrinho está vazio</h3>
+                <p>Adicione itens</p>
+            </div>
+        </aside>
+    </div>
+</body>
+
+</html>
