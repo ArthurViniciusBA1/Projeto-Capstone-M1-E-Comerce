@@ -138,7 +138,7 @@ function testCarrinho() {
 
 function barraDePesquisa() {
     listaDeProdutos.innerHTML = ""
-    let pesquisa = document.getElementById("pesquisa").value
+    let pesquisa = ((document.getElementById("pesquisa").value).toLowerCase()).trim()
 
     if (pesquisa === "") {
         for (let i = 0; i < data.length; i++) {
@@ -152,16 +152,15 @@ function barraDePesquisa() {
     for (let i = 0; i < data.length; i++) {
         let nomes = data[i].nameItem.split(" ")
         for (let j = 0; j < nomes.length; j++) {
-            if (pesquisa === nomes[j]) {
-                listaDeProdutos.append(gerarTeamplate(data[i]))
-            } else if (pesquisa === data[i].nameItem){
-                listaDeProdutos.innerHTML = ""
+            if (pesquisa === ((nomes[j]).toLowerCase()).substr(0, pesquisa.length)) {
                 listaDeProdutos.append(gerarTeamplate(data[i]))
             }
         }
     }
 
 }
+
+
 
 function filtro(palavra) {
     for (let i = 0; i < data.length; i++) {
