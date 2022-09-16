@@ -201,6 +201,7 @@ main ul li button {
 main ul li button:hover {
     text-decoration: underline;
     font-weight: bold;
+    transition: all 0.1s linear 0s;
 }
 
 .lateral {

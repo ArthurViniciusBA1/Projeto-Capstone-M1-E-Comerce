@@ -146,10 +146,14 @@ function barraDePesquisa() {
         }
         return
     }
-
+    
 
 
     for (let i = 0; i < data.length; i++) {
+        if(pesquisa === (data[i].nameItem).toLowerCase()){
+            listaDeProdutos.append(gerarTeamplate(data[i]))
+            return
+        }
         let nomes = data[i].nameItem.split(" ")
         for (let j = 0; j < nomes.length; j++) {
             if (pesquisa === ((nomes[j]).toLowerCase()).substr(0, pesquisa.length)) {
